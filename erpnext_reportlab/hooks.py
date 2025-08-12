@@ -20,14 +20,71 @@ app_license = "mit"
 # 		"has_permission": "erpnext_reportlab.api.permission.has_app_permission"
 # 	}
 # ]
-
+from . import __version__ as app_version
 # Includes in <head>
 # ------------------
+app_include_css = "/assets/erpnext_reportlab/css/erpnext_reportlab.css"
+app_include_js = "/assets/erpnext_reportlab/js/erpnext_reportlab.js"
+# include js in doctype views
+doctype_js = {
+    "Print Format": "public/js/print_format.js",
+    "Print Settings": "public/js/print_settings.js"
+}
+# before_install = "erpnext_reportlab.install.before_install"
+after_install = "erpnext_reportlab.install.after_install"
 
+# Boot session hooks - Removed to fix module import errors
+# The PDF engine will auto-load through the __init__.py file instead
+
+# Document Events
+# ---------------
+# Hook on document methods and events
+# Replace with empty or remove entirely:
+doc_events = {}
+# Scheduled Tasks
+# ---------------
+
+scheduler_events = {
+    "hourly": [
+        "erpnext_reportlab.utils.maintenance.cleanup_pdf_cache",
+        "erpnext_reportlab.utils.analytics.update_performance_analytics"
+    ],
+    "daily": [
+        "erpnext_reportlab.utils.maintenance.cleanup_old_logs",
+        "erpnext_reportlab.utils.analytics.generate_daily_reports"
+    ],
+    "weekly": [
+        "erpnext_reportlab.utils.analytics.generate_performance_insights"
+    ]
+}
+
+# In erpnext_reportlab/hooks.py
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "dt": ["in", ["Print Format", "Print Settings"]]
+        }
+    }
+]
+
+# In erpnext_reportlab/hooks.py
+override_doctype_class = {
+    "Print Format": "erpnext_reportlab.overrides.print_format.PrintFormatOverride"
+}
+
+# Comment out the override line temporarily
+# override_doctype_class = {
+#     "Print Format": "erpnext_reportlab.overrides.print_format.PrintFormatOverride"
+# }
+
+# OR set to empty dict
+override_doctype_class = {}
 # include js, css files in header of desk.html
 # app_include_css = "/assets/erpnext_reportlab/css/erpnext_reportlab.css"
 # app_include_js = "/assets/erpnext_reportlab/js/erpnext_reportlab.js"
-
+# In hooks.py
+after_migrate = ["erpnext_reportlab.erpnext_reportlab.utils.simple_reportlab.patch_pdf_generation"]
 # include js, css files in header of web template
 # web_include_css = "/assets/erpnext_reportlab/css/erpnext_reportlab.css"
 # web_include_js = "/assets/erpnext_reportlab/js/erpnext_reportlab.js"

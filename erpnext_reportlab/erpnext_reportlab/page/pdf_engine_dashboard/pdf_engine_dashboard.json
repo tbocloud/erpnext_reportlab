@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2025-08-12 22:38:13.011806",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-08-12 22:38:13.011806",
+ "modified_by": "Administrator",
+ "module": "Erpnext Reportlab",
+ "name": "pdf-engine-dashboard",
+ "owner": "Administrator",
+ "page_name": "pdf-engine-dashboard",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "PDF Engine Dashboard"
+}

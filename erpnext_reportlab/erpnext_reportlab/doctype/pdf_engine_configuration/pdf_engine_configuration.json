@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:configuration_name",
+ "creation": "2025-08-12 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "configuration_name",
+  "enabled",
+  "column_break_3",
+  "priority",
+  "section_break_5",
+  "engine_type",
+  "fallback_engine",
+  "column_break_8",
+  "timeout_seconds",
+  "max_memory_mb",
+  "section_break_11",
+  "for_doctype",
+  "for_print_format",
+  "column_break_14",
+  "apply_to_all_formats",
+  "conditions_section",
+  "conditions",
+  "configuration_section",
+  "engine_configuration",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "configuration_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Configuration Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "10",
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Priority",
+   "description": "Lower number = higher priority"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Engine Settings"
+  },
+  {
+   "fieldname": "engine_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Engine Type",
+   "options": "ReportLab\nwkhtmltopdf\nAuto",
+   "reqd": 1,
+   "default": "Auto"
+  },
+  {
+   "fieldname": "fallback_engine",
+   "fieldtype": "Select",
+   "label": "Fallback Engine",
+   "options": "ReportLab\nwkhtmltopdf",
+   "default": "wkhtmltopdf"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "30",
+   "fieldname": "timeout_seconds",
+   "fieldtype": "Int",
+   "label": "Timeout (Seconds)"
+  },
+  {
+   "default": "512",
+   "fieldname": "max_memory_mb",
+   "fieldtype": "Int",
+   "label": "Max Memory (MB)"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "Application Rules"
+  },
+  {
+   "fieldname": "for_doctype",
+   "fieldtype": "Link",
+   "label": "For DocType",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "for_print_format",
+   "fieldtype": "Link",
+   "label": "For Print Format",
+   "options": "Print Format"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "apply_to_all_formats",
+   "fieldtype": "Check",
+   "label": "Apply to All Print Formats"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Advanced Conditions"
+  },
+  {
+   "fieldname": "conditions",
+   "fieldtype": "Code",
+   "label": "Conditions (Python)",
+   "language": "python",
+   "description": "Python code that returns True/False. Available variables: doc, print_format, user"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "configuration_section",
+   "fieldtype": "Section Break",
+   "label": "Engine Configuration"
+  },
+  {
+   "fieldname": "engine_configuration",
+   "fieldtype": "JSON",
+   "label": "Engine Configuration",
+   "description": "JSON configuration for the selected engine"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-12 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ERPNext ReportLab",
+ "name": "PDF Engine Configuration",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Print Manager"
+  }
+ ],
+ "sort_field": "priority",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,259 @@
+{
+ "actions": [],
+ "creation": "2025-08-12 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "analytics_period",
+  "date_range",
+  "from_date",
+  "to_date",
+  "column_break_4",
+  "doctype_filter",
+  "print_format_filter",
+  "summary_metrics",
+  "total_generations",
+  "avg_generation_time",
+  "column_break_9",
+  "success_rate",
+  "fallback_rate",
+  "engine_performance",
+  "reportlab_stats",
+  "wkhtmltopdf_stats",
+  "performance_comparison",
+  "reportlab_avg_time",
+  "wkhtmltopdf_avg_time",
+  "column_break_16",
+  "reportlab_success_rate",
+  "wkhtmltopdf_success_rate",
+  "resource_usage",
+  "avg_cpu_time",
+  "avg_memory_usage",
+  "column_break_21",
+  "peak_memory_usage",
+  "total_file_size_mb",
+  "optimization_suggestions",
+  "suggestions",
+  "auto_generated",
+  "last_updated"
+ ],
+ "fields": [
+  {
+   "fieldname": "analytics_period",
+   "fieldtype": "Section Break",
+   "label": "Analytics Period"
+  },
+  {
+   "fieldname": "date_range",
+   "fieldtype": "Select",
+   "label": "Date Range",
+   "options": "Today\nYesterday\nLast 7 Days\nLast 30 Days\nLast Quarter\nCustom",
+   "reqd": 1,
+   "default": "Last 7 Days"
+  },
+  {
+   "depends_on": "eval:doc.date_range == 'Custom'",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "depends_on": "eval:doc.date_range == 'Custom'",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "doctype_filter",
+   "fieldtype": "Link",
+   "label": "Filter by DocType",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "print_format_filter",
+   "fieldtype": "Link",
+   "label": "Filter by Print Format",
+   "options": "Print Format"
+  },
+  {
+   "fieldname": "summary_metrics",
+   "fieldtype": "Section Break",
+   "label": "Summary Metrics"
+  },
+  {
+   "fieldname": "total_generations",
+   "fieldtype": "Int",
+   "label": "Total Generations",
+   "read_only": 1
+  },
+  {
+   "fieldname": "avg_generation_time",
+   "fieldtype": "Float",
+   "label": "Avg Generation Time (ms)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "success_rate",
+   "fieldtype": "Percent",
+   "label": "Success Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fallback_rate",
+   "fieldtype": "Percent",
+   "label": "Fallback Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "engine_performance",
+   "fieldtype": "Section Break",
+   "label": "Engine Performance"
+  },
+  {
+   "fieldname": "reportlab_stats",
+   "fieldtype": "JSON",
+   "label": "ReportLab Statistics",
+   "read_only": 1
+  },
+  {
+   "fieldname": "wkhtmltopdf_stats",
+   "fieldtype": "JSON",
+   "label": "wkhtmltopdf Statistics",
+   "read_only": 1
+  },
+  {
+   "fieldname": "performance_comparison",
+   "fieldtype": "Section Break",
+   "label": "Performance Comparison"
+  },
+  {
+   "fieldname": "reportlab_avg_time",
+   "fieldtype": "Float",
+   "label": "ReportLab Avg Time (ms)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "wkhtmltopdf_avg_time",
+   "fieldtype": "Float",
+   "label": "wkhtmltopdf Avg Time (ms)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reportlab_success_rate",
+   "fieldtype": "Percent",
+   "label": "ReportLab Success Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "wkhtmltopdf_success_rate",
+   "fieldtype": "Percent",
+   "label": "wkhtmltopdf Success Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resource_usage",
+   "fieldtype": "Section Break",
+   "label": "Resource Usage"
+  },
+  {
+   "fieldname": "avg_cpu_time",
+   "fieldtype": "Float",
+   "label": "Avg CPU Time (ms)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "avg_memory_usage",
+   "fieldtype": "Float",
+   "label": "Avg Memory Usage (MB)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "peak_memory_usage",
+   "fieldtype": "Float",
+   "label": "Peak Memory Usage (MB)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_file_size_mb",
+   "fieldtype": "Float",
+   "label": "Total File Size (MB)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "optimization_suggestions",
+   "fieldtype": "Section Break",
+   "label": "Optimization Suggestions"
+  },
+  {
+   "fieldname": "suggestions",
+   "fieldtype": "Text",
+   "label": "Suggestions",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_generated",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Auto Generated"
+  },
+  {
+   "fieldname": "last_updated",
+   "fieldtype": "Datetime",
+   "label": "Last Updated",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-12 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ERPNext ReportLab",
+ "name": "PDF Performance Analytics",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Print Manager"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

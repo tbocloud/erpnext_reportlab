@@ -1,0 +1,6 @@
+reportlab>=3.6.0
+html2text>=2020.1.16
+lxml>=4.6.0
+Pillow>=8.0.0
+qrcode>=7.0.0
+python-barcode>=0.13.0

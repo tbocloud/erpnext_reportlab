@@ -1,0 +1,226 @@
+{
+ "actions": [],
+ "creation": "2025-08-12 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_info",
+  "ref_doctype",
+  "ref_docname",
+  "column_break_4",
+  "print_format",
+  "user",
+  "generation_details",
+  "engine_used",
+  "generation_time",
+  "column_break_9",
+  "status",
+  "file_size_kb",
+  "performance_metrics",
+  "cpu_time_ms",
+  "memory_used_mb",
+  "column_break_14",
+  "queue_time_ms",
+  "render_time_ms",
+  "error_details",
+  "error_message",
+  "stack_trace",
+  "additional_info",
+  "request_ip",
+  "user_agent",
+  "column_break_20",
+  "cache_hit",
+  "fallback_used"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_info",
+   "fieldtype": "Section Break",
+   "label": "Document Information"
+  },
+  {
+   "fieldname": "ref_doctype",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reference DocType",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ref_docname",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Reference Document",
+   "options": "ref_doctype",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "print_format",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Print Format",
+   "options": "Print Format"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "generation_details",
+   "fieldtype": "Section Break",
+   "label": "Generation Details"
+  },
+  {
+   "fieldname": "engine_used",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Engine Used",
+   "options": "ReportLab\nwkhtmltopdf",
+   "reqd": 1
+  },
+  {
+   "fieldname": "generation_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Generation Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Success\nFailed\nTimeout\nFallback",
+   "reqd": 1
+  },
+  {
+   "fieldname": "file_size_kb",
+   "fieldtype": "Float",
+   "label": "File Size (KB)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "performance_metrics",
+   "fieldtype": "Section Break",
+   "label": "Performance Metrics"
+  },
+  {
+   "fieldname": "cpu_time_ms",
+   "fieldtype": "Float",
+   "label": "CPU Time (ms)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "memory_used_mb",
+   "fieldtype": "Float",
+   "label": "Memory Used (MB)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "queue_time_ms",
+   "fieldtype": "Float",
+   "label": "Queue Time (ms)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "render_time_ms",
+   "fieldtype": "Float",
+   "label": "Render Time (ms)",
+   "precision": "2"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.status == 'Failed'",
+   "fieldname": "error_details",
+   "fieldtype": "Section Break",
+   "label": "Error Details"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Small Text",
+   "label": "Error Message"
+  },
+  {
+   "fieldname": "stack_trace",
+   "fieldtype": "Code",
+   "label": "Stack Trace",
+   "language": "text"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "additional_info",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "request_ip",
+   "fieldtype": "Data",
+   "label": "Request IP"
+  },
+  {
+   "fieldname": "user_agent",
+   "fieldtype": "Small Text",
+   "label": "User Agent"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cache_hit",
+   "fieldtype": "Check",
+   "label": "Cache Hit"
+  },
+  {
+   "default": "0",
+   "fieldname": "fallback_used",
+   "fieldtype": "Check",
+   "label": "Fallback Used"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2025-08-12 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ERPNext ReportLab",
+ "name": "PDF Generation Log",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Print Manager"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "ref_docname"
+}

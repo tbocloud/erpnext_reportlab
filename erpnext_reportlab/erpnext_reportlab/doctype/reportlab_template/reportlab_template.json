@@ -1,0 +1,243 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:template_name",
+ "creation": "2025-08-12 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "enabled",
+  "column_break_3",
+  "template_type",
+  "version",
+  "section_break_6",
+  "for_doctype",
+  "for_print_format",
+  "column_break_9",
+  "is_default",
+  "template_section",
+  "template_code",
+  "html_template",
+  "page_settings_section",
+  "page_size",
+  "orientation",
+  "column_break_16",
+  "margin_top",
+  "margin_bottom",
+  "margin_left",
+  "margin_right",
+  "advanced_settings_section",
+  "fonts_config",
+  "styles_config",
+  "testing_section",
+  "test_data",
+  "validation_results",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Template Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "template_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Template Type",
+   "options": "Pure ReportLab\nHTML + ReportLab\nHTML Only",
+   "reqd": 1,
+   "default": "HTML + ReportLab"
+  },
+  {
+   "default": "1.0",
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Version"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Application"
+  },
+  {
+   "fieldname": "for_doctype",
+   "fieldtype": "Link",
+   "label": "For DocType",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "for_print_format",
+   "fieldtype": "Link",
+   "label": "For Print Format",
+   "options": "Print Format"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Is Default Template"
+  },
+  {
+   "fieldname": "template_section",
+   "fieldtype": "Section Break",
+   "label": "Template Code"
+  },
+  {
+   "depends_on": "eval:doc.template_type != 'HTML Only'",
+   "fieldname": "template_code",
+   "fieldtype": "Code",
+   "label": "ReportLab Template Code",
+   "language": "python",
+   "description": "Python code using ReportLab to generate PDF"
+  },
+  {
+   "depends_on": "eval:doc.template_type != 'Pure ReportLab'",
+   "fieldname": "html_template",
+   "fieldtype": "Code",
+   "label": "HTML Template",
+   "language": "html",
+   "description": "HTML template for conversion to ReportLab"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "page_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Page Settings"
+  },
+  {
+   "default": "A4",
+   "fieldname": "page_size",
+   "fieldtype": "Select",
+   "label": "Page Size",
+   "options": "A4\nA3\nA5\nLetter\nLegal\nCustom"
+  },
+  {
+   "default": "Portrait",
+   "fieldname": "orientation",
+   "fieldtype": "Select",
+   "label": "Orientation",
+   "options": "Portrait\nLandscape"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "72",
+   "fieldname": "margin_top",
+   "fieldtype": "Float",
+   "label": "Margin Top (points)"
+  },
+  {
+   "default": "72",
+   "fieldname": "margin_bottom",
+   "fieldtype": "Float",
+   "label": "Margin Bottom (points)"
+  },
+  {
+   "default": "72",
+   "fieldname": "margin_left",
+   "fieldtype": "Float",
+   "label": "Margin Left (points)"
+  },
+  {
+   "default": "72",
+   "fieldname": "margin_right",
+   "fieldtype": "Float",
+   "label": "Margin Right (points)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "advanced_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Advanced Settings"
+  },
+  {
+   "fieldname": "fonts_config",
+   "fieldtype": "JSON",
+   "label": "Fonts Configuration"
+  },
+  {
+   "fieldname": "styles_config",
+   "fieldtype": "JSON",
+   "label": "Styles Configuration"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "testing_section",
+   "fieldtype": "Section Break",
+   "label": "Testing & Validation"
+  },
+  {
+   "fieldname": "test_data",
+   "fieldtype": "JSON",
+   "label": "Test Data",
+   "description": "Sample data for testing the template"
+  },
+  {
+   "fieldname": "validation_results",
+   "fieldtype": "Text",
+   "label": "Validation Results",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-12 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ERPNext ReportLab",
+ "name": "ReportLab Template",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Print Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
