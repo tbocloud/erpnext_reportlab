@@ -1,0 +1,64 @@
+[
+  {
+    "doctype": "Custom Field",
+    "dt": "Print Settings",
+    "label": "ReportLab PDF Engine Settings",
+    "fieldname": "reportlab_section",
+    "fieldtype": "Section Break",
+    "insert_after": "pdf_page_size",
+    "collapsible": 1,
+    "description": "Configure ReportLab as the default PDF engine"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Print Settings",
+    "label": "Default PDF Engine",
+    "fieldname": "default_pdf_engine",
+    "fieldtype": "Select",
+    "options": "wkhtmltopdf\nReportLab",
+    "default": "wkhtmltopdf",
+    "insert_after": "reportlab_section",
+    "description": "Choose the default PDF generation engine for the system"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Print Settings",
+    "label": "Enable ReportLab",
+    "fieldname": "enable_reportlab",
+    "fieldtype": "Check",
+    "default": 0,
+    "insert_after": "default_pdf_engine",
+    "description": "Enable ReportLab for all PDF generation"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Print Settings",
+    "label": "Performance Monitoring",
+    "fieldname": "pdf_performance_monitoring",
+    "fieldtype": "Check",
+    "default": 0,
+    "insert_after": "enable_reportlab",
+    "description": "Log PDF generation performance metrics"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Print Settings",
+    "label": "ReportLab Quality",
+    "fieldname": "reportlab_quality",
+    "fieldtype": "Select",
+    "options": "High\nMedium\nLow",
+    "default": "High",
+    "insert_after": "pdf_performance_monitoring",
+    "description": "Set the quality level for ReportLab PDF generation"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Print Settings",
+    "label": "Auto Template Selection",
+    "fieldname": "auto_template_selection",
+    "fieldtype": "Check",
+    "default": 1,
+    "insert_after": "reportlab_quality",
+    "description": "Automatically select best ReportLab template for document type"
+  }
+]
